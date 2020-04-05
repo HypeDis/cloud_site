@@ -1,0 +1,66 @@
+// color theme
+$--c-primary: --c-primary;
+$--c-primary-light: --c-primary-light;
+$--c-primary-dark: --c-primary-dark;
+
+$--c-secondary: --c-secondary;
+$--c-secondary-light: --c-secondary-light;
+$--c-secondary-dark: --c-secondary-dark;
+
+$--c-tertiary: --c-tertiary;
+$--c-tertiary-light: --c-tertiary-light;
+$--c-tertiary-dark: --c-tertiary-dark;
+
+$--c-on-light: --c-on-light;
+$--c-on-light-light: --c-on-light-light;
+$--c-on-light-dark: --c-on-light-dark;
+
+$--c-on-dark: --c-on-dark;
+$--c-on-dark-light: --c-on-dark-light;
+$--c-on-dark-dark: --c-on-dark-dark;
+
+$c-theme-light: (
+  $--c-primary: #c7efcf,
+  $--c-primary-light: #e0f6e4,
+  $--c-primary-dark: #6d8371,
+  $--c-secondary: #ceabb1,
+  $--c-secondary-light: #e4d1d4,
+  $--c-secondary-dark: #715e61,
+  $--c-tertiary: #e6c229,
+  $--c-tertiary-light: #f1dd8a,
+  $--c-tertiary-dark: #7e6a17,
+  $--c-on-light: #575759,
+  $--c-on-light-light: #969697,
+  $--c-on-light-dark: #0a0a0b,
+  $--c-on-dark: #e6ece6,
+  $--c-on-dark-light: #fcfcfc,
+  $--c-on-dark-dark: #b9bbb9,
+);
+
+$c-theme-dark: (
+  $--c-primary: pink,
+  $--c-primary-light: #e0f6e4,
+  $--c-primary-dark: #6d8371,
+  $--c-secondary: orange,
+  $--c-secondary-light: #e4d1d4,
+  $--c-secondary-dark: #715e61,
+  $--c-tertiary: green,
+  $--c-tertiary-light: #f1dd8a,
+  $--c-tertiary-dark: #7e6a17,
+  $--c-on-light: #575759,
+  $--c-on-light-light: #969697,
+  $--c-on-light-dark: #0a0a0b,
+  $--c-on-dark: #e6ece6,
+  $--c-on-dark-light: #fcfcfc,
+  $--c-on-dark-dark: #909490,
+);
+
+$--gutter-vert-small: --gutter-vert-small;
+$--gutter-vert-medium: --gutter-vert-medium;
+$--gutter-vert-large: --gutter-vert-large;
+
+:root {
+  #{$--gutter-vert-small}: 1.5rem;
+  #{$--gutter-vert-medium}: 2rem;
+  #{$--gutter-vert-large}: 2.5rem;
+}
