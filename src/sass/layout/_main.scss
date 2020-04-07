@@ -1,7 +1,9 @@
 .main-container {
   display: flex;
+  align-self: stretch;
   background-color: var($--c-on-dark-light);
   border-radius: 40px;
-  height: 300px;
   overflow: hidden;
+  height: 90vh;
+  margin: 0 5vh;
 }

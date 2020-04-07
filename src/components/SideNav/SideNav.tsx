@@ -1,9 +1,15 @@
 import React from 'react';
+import NavLinks from './NavLinks';
+import Logo from './Logo';
+import Controls from './Controls';
+import { NavItemDataCollection } from './constants';
 
 function SideNav() {
   return (
-    <nav className="side-nav">
-      <h1>side nav</h1>
+    <nav className="sidenav">
+      <Logo />
+      <NavLinks items={NavItemDataCollection} />
+      <Controls />
     </nav>
   );
 }

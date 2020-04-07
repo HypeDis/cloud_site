@@ -1,6 +1,7 @@
 // utils
 @import './sass/utils/variables';
 @import './sass/utils/mixins';
+@import './sass/utils/utility';
 // base
 @import './sass/base/reset';
 @import './sass/base/typography';
@@ -8,11 +9,11 @@
 @import './sass/pages/home';
 // layout
 @import './sass/layout/main';
-@import './sass/layout/sidenav';
-@import './sass/layout/storagestats';
-@import './sass/layout/dashboard';
 // components
 @import './sass/components/toggle';
+@import './sass/components/sidenav';
+@import './sass/components/storagestats';
+@import './sass/components/dashboard';
 // themes
 @import './sass/themes/themes';
 // vendors

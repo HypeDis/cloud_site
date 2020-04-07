@@ -1,4 +1,6 @@
-* {
+*,
+*::before,
+*::after {
   padding: 0;
   margin: 0;
   font-size: inherit;
@@ -6,9 +8,15 @@
 }
 html {
   font-size: 62.5%;
-  font-family: 'Times New Roman', Times, serif;
 }
 body {
-  background-color: var($--c-primary);
-  padding: 5rem;
+  background-color: var($--c-on-dark);
+}
+.App {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
