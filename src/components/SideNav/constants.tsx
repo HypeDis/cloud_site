@@ -66,7 +66,7 @@ export const OptionsMenuCollection: ControlMenuAction[] = [
   },
   {
     label: 'More',
-    iconURL: '/img/sprites.svg#icon-table2',
+    iconURL: '/img/sprites.svg#icon-grid1',
     title: 'More options',
   },
 ];

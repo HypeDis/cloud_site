@@ -1,10 +1,10 @@
 import React from 'react';
 
-function StorageStats() {
+function RightPanel() {
   return (
     <div className="storage-stats">
-      <h1>Storage Stats</h1>
+      <h1>Right Panel</h1>
     </div>
   );
 }
-export default StorageStats;
+export default RightPanel;

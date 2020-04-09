@@ -1,5 +1,41 @@
 .dashboard {
+  display: flex;
+  flex-direction: column;
   background-color: var($--c-primary-light);
   margin: 0 var($--gutter-vert-medium);
   flex: 1;
+  & .search {
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    fill: var($--c-on-light-light);
+    color: var($--c-on-light-light);
+    width: 100%;
+    &__container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      border-radius: 1rem;
+      height: 4rem;
+      background-color: var($--c-on-dark-light);
+    }
+    &__icon {
+      height: 2rem;
+      width: 2rem;
+    }
+    &__input {
+      padding-left: 8px;
+      color: inherit;
+      border: none;
+      font-size: 1.6rem;
+      width: 40rem;
+      transition: all 0.4s;
+    }
+    &__input:focus {
+      width: 45rem;
+    }
+  }
 }
