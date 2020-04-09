@@ -1,7 +1,7 @@
 import React from 'react';
 import Dashboard from './Dashboard/Dashboard';
 import SideNav from './SideNav/SideNav';
-import StorageStats from './StorageStats/StorageStats';
+import RightPanel from './RightPanel/RightPanel';
 import { BrowserRouter as Router, Switch, Redirect } from 'react-router-dom';
 
 function Main() {
@@ -10,7 +10,7 @@ function Main() {
       <div className="main-container">
         <SideNav />
         <Dashboard />
-        <StorageStats />
+        <RightPanel />
         <Switch>
           <Redirect from="/" to="/home" />
         </Switch>
