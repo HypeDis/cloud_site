@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
-type SuggestedProps = { content: any[] };
-export default function Suggested({ content }: SuggestedProps) {
-  const [view, setView] = useState('GRID');
+import { SuggestedView, SuggestedContent } from './types';
+import SuggestedCard from './SuggestedCard';
+type SuggestedProps = { suggestedContents: SuggestedContent[] };
+
+export default function Suggested({ suggestedContents }: SuggestedProps) {
+  const [view, setView] = useState(SuggestedView.GRID);
   useEffect(() => {}, [view]);
   console.log('view changed', view);
   return (
@@ -14,8 +17,8 @@ export default function Suggested({ content }: SuggestedProps) {
           <button
             className="btn grid-btn"
             onClick={() => {
-              if (view !== 'GRID') {
-                setView('GRID');
+              if (view !== SuggestedView.GRID) {
+                setView(SuggestedView.GRID);
               }
             }}
           >
@@ -28,8 +31,8 @@ export default function Suggested({ content }: SuggestedProps) {
           <button
             className="btn list-btn"
             onClick={() => {
-              if (view !== 'LIST') {
-                setView('LIST');
+              if (view !== SuggestedView.LIST) {
+                setView(SuggestedView.LIST);
               }
             }}
           >
@@ -43,228 +46,14 @@ export default function Suggested({ content }: SuggestedProps) {
       </div>
       <div
         className={`suggested-items ${
-          view === 'GRID' ? 'suggested-items-grid' : 'suggested-items-list'
+          view === SuggestedView.GRID
+            ? 'suggested-items-grid'
+            : 'suggested-items-list'
         }`}
       >
-        <a href="#file1" className="suggested__card--container">
-          <div
-            className={`suggested__card ${
-              view === 'GRID'
-                ? 'suggested__card--grid'
-                : 'suggested__card--list'
-            }`}
-          >
-            <div className="options">
-              <button className="options-btn">
-                <svg className="options-icon">
-                  <use
-                    href={
-                      process.env.PUBLIC_URL +
-                      '/img/sprites.svg#icon-dots-horizontal'
-                    }
-                  ></use>
-                </svg>
-              </button>
-            </div>
-            <div className="content-icon">
-              <svg>
-                <use
-                  href={process.env.PUBLIC_URL + '/img/sprites.svg#icon-folder'}
-                ></use>
-              </svg>
-            </div>
-            <div className="collaborators">
-              <div className="collab-icon">
-                <img
-                  src={process.env.PUBLIC_URL + '/img/people/batman.png'}
-                  alt="person icon"
-                  className="collab-img"
-                />
-              </div>
-              <div className="collab-icon">
-                <img
-                  src={process.env.PUBLIC_URL + '/img/people/chris.jpg'}
-                  alt="person icon"
-                  className="collab-img"
-                />
-              </div>
-              <div className="collab-icon">
-                <div className="collab-text">
-                  <p>+2</p>
-                </div>
-              </div>
-            </div>
-            <div className="content">
-              <p className="content__name">Summer 2019</p>
-              <p className="content__date">Last Accessed: 2020-03-21</p>
-            </div>
-          </div>
-        </a>
-        <a href="file2" className="suggested__card--container">
-          <div
-            className={`suggested__card ${
-              view === 'GRID'
-                ? 'suggested__card--grid'
-                : 'suggested__card--list'
-            }`}
-          >
-            <div className="options">
-              <button className="options-btn">
-                <svg className="options-icon">
-                  <use
-                    href={
-                      process.env.PUBLIC_URL +
-                      '/img/sprites.svg#icon-dots-horizontal'
-                    }
-                  ></use>
-                </svg>
-              </button>
-            </div>
-            <div className="content-icon">
-              <svg>
-                <use
-                  href={process.env.PUBLIC_URL + '/img/sprites.svg#icon-folder'}
-                ></use>
-              </svg>
-            </div>
-            <div className="collaborators">
-              <div className="collab-icon">
-                <img
-                  src={process.env.PUBLIC_URL + '/img/people/batman.png'}
-                  alt="person icon"
-                  className="collab-img"
-                />
-              </div>
-              <div className="collab-icon">
-                <img
-                  src={process.env.PUBLIC_URL + '/img/people/chris.jpg'}
-                  alt="person icon"
-                  className="collab-img"
-                />
-              </div>
-              <div className="collab-icon">
-                <div className="collab-text">
-                  <p>+2</p>
-                </div>
-              </div>
-            </div>
-            <div className="content">
-              <p className="content__name">
-                Tax Documents 2019 Testing a very long filename needs to be even
-                longer
-              </p>
-              <p className="content__date">Last Accessed: 2020-03-21</p>
-            </div>
-          </div>
-        </a>
-        <a href="#file3" className="suggested__card--container">
-          <div
-            className={`suggested__card ${
-              view === 'GRID'
-                ? 'suggested__card--grid'
-                : 'suggested__card--list'
-            }`}
-          >
-            <div className="options">
-              <button className="options-btn">
-                <svg className="options-icon">
-                  <use
-                    href={
-                      process.env.PUBLIC_URL +
-                      '/img/sprites.svg#icon-dots-horizontal'
-                    }
-                  ></use>
-                </svg>
-              </button>
-            </div>
-            <div className="content-icon">
-              <svg>
-                <use
-                  href={process.env.PUBLIC_URL + '/img/sprites.svg#icon-folder'}
-                ></use>
-              </svg>
-            </div>
-            <div className="collaborators">
-              <div className="collab-icon">
-                <img
-                  src={process.env.PUBLIC_URL + '/img/people/batman.png'}
-                  alt="person icon"
-                  className="collab-img"
-                />
-              </div>
-              <div className="collab-icon">
-                <img
-                  src={process.env.PUBLIC_URL + '/img/people/chris.jpg'}
-                  alt="person icon"
-                  className="collab-img"
-                />
-              </div>
-              <div className="collab-icon">
-                <div className="collab-text">
-                  <p>+2</p>
-                </div>
-              </div>
-            </div>
-            <div className="content">
-              <p className="content__name">Top Secret</p>
-              <p className="content__date">Last Accessed: 2020-03-21</p>
-            </div>
-          </div>
-        </a>
-        <a href="#file4" className="suggested__card--container">
-          <div
-            className={`suggested__card ${
-              view === 'GRID'
-                ? 'suggested__card--grid'
-                : 'suggested__card--list'
-            }`}
-          >
-            <div className="options">
-              <button className="options-btn">
-                <svg className="options-icon">
-                  <use
-                    href={
-                      process.env.PUBLIC_URL +
-                      '/img/sprites.svg#icon-dots-horizontal'
-                    }
-                  ></use>
-                </svg>
-              </button>
-            </div>
-            <div className="content-icon">
-              <svg>
-                <use
-                  href={process.env.PUBLIC_URL + '/img/sprites.svg#icon-folder'}
-                ></use>
-              </svg>
-            </div>
-            <div className="collaborators">
-              <div className="collab-icon">
-                <img
-                  src={process.env.PUBLIC_URL + '/img/people/batman.png'}
-                  alt="person icon"
-                  className="collab-img"
-                />
-              </div>
-              <div className="collab-icon">
-                <img
-                  src={process.env.PUBLIC_URL + '/img/people/chris.jpg'}
-                  alt="person icon"
-                  className="collab-img"
-                />
-              </div>
-              <div className="collab-icon">
-                <div className="collab-text">
-                  <p>+2</p>
-                </div>
-              </div>
-            </div>
-            <div className="content">
-              <p className="content__name">Movies</p>
-              <p className="content__date">Last Accessed: 2020-03-21</p>
-            </div>
-          </div>
-        </a>
+        {suggestedContents.map(content => (
+          <SuggestedCard view={view} content={content} />
+        ))}
       </div>
     </div>
   );
