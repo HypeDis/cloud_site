@@ -23,18 +23,22 @@
     border-radius: 1rem;
     height: 4rem;
     background-color: var($--c-on-dark-light);
+    box-shadow: $dashboard-box-shadow;
   }
   &__icon {
     height: 2rem;
     width: 2rem;
   }
   &__input {
+    outline: none;
+    background-color: inherit;
     padding-left: 8px;
     color: inherit;
     border: none;
     font-size: 1.6rem;
     width: 40rem;
     transition: all 0.4s;
+    backface-visibility: hidden;
   }
   &__input:focus {
     width: 45rem;
@@ -98,15 +102,22 @@
   & a,
   a:visited,
   a:link {
+    & * {
+      backface-visibility: hidden;
+    }
     padding: 0;
     margin: 0;
     text-decoration: inherit;
     color: inherit;
+    backface-visibility: hidden;
 
     transition: all 0.2s;
   }
   a:hover {
-    transform: scale(1.01);
+    backface-visibility: hidden;
+    filter: brightness(1.1);
+    // transform: scale(1.01);
+    transform: translateY(-2px);
   }
 }
 
@@ -128,7 +139,13 @@
 }
 .suggested__card {
   background-color: var($--c-on-dark-light);
-  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
+  box-shadow: $dashboard-box-shadow;
+  & .options-btn,
+  .options-btn:active {
+    border: none;
+    outline: none;
+    text-decoration: none;
+  }
 
   &--grid {
     height: 15rem;
@@ -150,6 +167,7 @@
         background-color: transparent;
         fill: var($--c-on-light);
       }
+
       &-btn:hover {
         fill: var($--c-on-light-light);
       }
@@ -207,10 +225,14 @@
       width: 80%;
       &__name {
         font-size: 1.4rem;
-        color: var($--c-on-light);
-        white-space: nowrap;
+        display: -moz-box;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -moz-box-orient: vertical;
+        -webkit-box-orient: vertical;
+        line-clamp: 2;
         overflow: hidden;
-        text-overflow: ellipsis;
+        color: var($--c-on-light);
       }
       &__date {
         font-size: 1rem;
@@ -292,7 +314,7 @@
     & .content {
       display: flex;
       align-items: center;
-      justify-content: start;
+      justify-content: flex-start;
       flex: 0 0 60%;
 
       &__name {

@@ -153,6 +153,7 @@
     fill: inherit;
   }
   &__link {
+    outline: none;
     position: relative;
     display: flex;
     align-items: center;
@@ -170,6 +171,7 @@
   &__link::before {
     content: '';
     height: 100%;
+    width: 0.8rem;
     border-left: 0.8rem solid var($--c-on-dark-light);
     border-top: 0.4rem solid transparent;
     border-bottom: 0.4rem solid transparent;
@@ -199,7 +201,8 @@
   }
 
   &__link:hover::before {
-    transform: scaleY(100%);
+    transform: scaleY(1);
+    -webkit-transform: scaleY(1);
   }
 
   &__link:hover {
