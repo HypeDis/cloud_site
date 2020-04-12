@@ -1,6 +1,6 @@
 import React from 'react';
 import NavItem from './NavItem';
-import { NavItemData } from './constants';
+import { NavItemData } from './types';
 
 type NavLinkProps = {
   items: NavItemData[];

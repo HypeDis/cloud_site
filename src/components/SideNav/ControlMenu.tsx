@@ -1,5 +1,5 @@
 import React, { RefObject } from 'react';
-import { ControlMenuAction } from './constants';
+import { ControlMenuAction } from './types';
 
 type ControlMenuProps = {
   menuRef: RefObject<HTMLDivElement>;
