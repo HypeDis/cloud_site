@@ -1,5 +1,5 @@
-import { SuggestedContent } from './types';
-
+import { SuggestedContent, RecentContent } from './types';
+import faker from 'faker';
 export const suggestedContentsFromDB: SuggestedContent[] = [
   {
     iconURL: process.env.PUBLIC_URL + '/img/sprites.svg#icon-folder',
@@ -64,5 +64,108 @@ export const suggestedContentsFromDB: SuggestedContent[] = [
         imageURL: process.env.PUBLIC_URL + '/img/people/batman.png',
       },
     ],
+  },
+];
+
+export const recentContentFromDB: RecentContent[] = [
+  {
+    name: faker.system.commonFileName(faker.system.commonFileExt()),
+    lastAccessed: faker.date
+      .between(
+        new Date(Date.now() - 30 * 24 * 60 * 60 * 1000),
+        new Date(Date.now())
+      )
+      .toLocaleDateString(),
+    iconURL: process.env.PUBLIC_URL + '/img/sprites.svg#icon-folder',
+  },
+  {
+    name: faker.system.commonFileName(faker.system.commonFileExt()),
+    lastAccessed: faker.date
+      .between(
+        new Date(Date.now() - 30 * 24 * 60 * 60 * 1000),
+        new Date(Date.now())
+      )
+      .toLocaleDateString(),
+    iconURL: process.env.PUBLIC_URL + '/img/sprites.svg#icon-folder',
+  },
+  {
+    name: faker.system.commonFileName(faker.system.commonFileExt()),
+    lastAccessed: faker.date
+      .between(
+        new Date(Date.now() - 30 * 24 * 60 * 60 * 1000),
+        new Date(Date.now())
+      )
+      .toLocaleDateString(),
+    iconURL: process.env.PUBLIC_URL + '/img/sprites.svg#icon-folder',
+  },
+  {
+    name: faker.system.commonFileName(faker.system.commonFileExt()),
+    lastAccessed: faker.date
+      .between(
+        new Date(Date.now() - 30 * 24 * 60 * 60 * 1000),
+        new Date(Date.now())
+      )
+      .toLocaleDateString(),
+    iconURL: process.env.PUBLIC_URL + '/img/sprites.svg#icon-folder',
+  },
+  {
+    name: faker.system.commonFileName(faker.system.commonFileExt()),
+    lastAccessed: faker.date
+      .between(
+        new Date(Date.now() - 30 * 24 * 60 * 60 * 1000),
+        new Date(Date.now())
+      )
+      .toLocaleDateString(),
+    iconURL: process.env.PUBLIC_URL + '/img/sprites.svg#icon-folder',
+  },
+  {
+    name: faker.system.commonFileName(faker.system.commonFileExt()),
+    lastAccessed: faker.date
+      .between(
+        new Date(Date.now() - 30 * 24 * 60 * 60 * 1000),
+        new Date(Date.now())
+      )
+      .toLocaleDateString(),
+    iconURL: process.env.PUBLIC_URL + '/img/sprites.svg#icon-folder',
+  },
+  {
+    name: faker.system.commonFileName(faker.system.commonFileExt()),
+    lastAccessed: faker.date
+      .between(
+        new Date(Date.now() - 30 * 24 * 60 * 60 * 1000),
+        new Date(Date.now())
+      )
+      .toLocaleDateString(),
+    iconURL: process.env.PUBLIC_URL + '/img/sprites.svg#icon-folder',
+  },
+  {
+    name: faker.system.commonFileName(faker.system.commonFileExt()),
+    lastAccessed: faker.date
+      .between(
+        new Date(Date.now() - 30 * 24 * 60 * 60 * 1000),
+        new Date(Date.now())
+      )
+      .toLocaleDateString(),
+    iconURL: process.env.PUBLIC_URL + '/img/sprites.svg#icon-folder',
+  },
+  {
+    name: faker.system.commonFileName(faker.system.commonFileExt()),
+    lastAccessed: faker.date
+      .between(
+        new Date(Date.now() - 30 * 24 * 60 * 60 * 1000),
+        new Date(Date.now())
+      )
+      .toLocaleDateString(),
+    iconURL: process.env.PUBLIC_URL + '/img/sprites.svg#icon-folder',
+  },
+  {
+    name: 'really really really long filename really really really long.exe',
+    lastAccessed: faker.date
+      .between(
+        new Date(Date.now() - 30 * 24 * 60 * 60 * 1000),
+        new Date(Date.now())
+      )
+      .toLocaleDateString(),
+    iconURL: process.env.PUBLIC_URL + '/img/sprites.svg#icon-folder',
   },
 ];

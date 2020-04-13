@@ -23,8 +23,7 @@ export default function SuggestedCard({ view, content }: SuggestedCardProps) {
             <svg className="options-icon">
               <use
                 href={
-                  process.env.PUBLIC_URL +
-                  '/img/sprites.svg#icon-dots-horizontal'
+                  process.env.PUBLIC_URL + '/img/sprites.svg#icon-dots-vertical'
                 }
               ></use>
             </svg>
