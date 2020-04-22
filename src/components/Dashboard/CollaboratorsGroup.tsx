@@ -13,12 +13,14 @@ export default function CollaboratorsGroup({
     const range = Math.min(collaborators.length, maxSize);
     for (let i = 0; i < range; i += 1) {
       const props = collaborators[i];
-      icons.push(<CollaboratorIcon {...props} />);
+      icons.push(
+        <CollaboratorIcon key={props.imageURL + i.toString()} {...props} />
+      );
     }
     if (collaborators.length > maxSize) {
       const notShownCount = collaborators.length - maxSize;
       icons.push(
-        <div className="collab-icon">
+        <div key="not-shown" className="collab-icon">
           <div className="collab-text">+{notShownCount}</div>
         </div>
       );

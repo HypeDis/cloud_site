@@ -6,7 +6,6 @@ type SuggestedProps = { suggestedContents: SuggestedContent[] };
 export default function Suggested({ suggestedContents }: SuggestedProps) {
   const [view, setView] = useState(SuggestedView.GRID);
   useEffect(() => {}, [view]);
-  console.log('view changed', view);
   return (
     <div className="suggested">
       <div className="suggested__titlebar">
@@ -52,7 +51,7 @@ export default function Suggested({ suggestedContents }: SuggestedProps) {
         }`}
       >
         {suggestedContents.map(content => (
-          <SuggestedCard view={view} content={content} />
+          <SuggestedCard key={content.name} view={view} content={content} />
         ))}
       </div>
     </div>

@@ -34,11 +34,6 @@ export default function SuggestedCard({ view, content }: SuggestedCardProps) {
             <use href={iconURL}></use>
           </svg>
         </div>
-        {/* <div className="collaborators">
-          {collaborators.map(props => (
-            <CollaboratorIcon {...props} />
-          ))}
-        </div> */}
         <CollaboratorsGroup collaborators={collaborators} maxSize={3} />
         <div className="content">
           <p className="content__name">{name}</p>

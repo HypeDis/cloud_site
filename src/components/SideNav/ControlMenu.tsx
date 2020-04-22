@@ -29,7 +29,7 @@ export default function ControlMenu({
       {/* create a MenuItem Component */}
       <div className="sidenav__controls__menu-items">
         {menuItems.map(item => (
-          <div className="menu-item">
+          <div key={item.label} className="menu-item">
             <button>
               <svg>
                 <use href={process.env.PUBLIC_URL + item.iconURL}></use>
